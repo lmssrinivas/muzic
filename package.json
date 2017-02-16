@@ -1,0 +1,23 @@
+{
+  "name": "react-sample1",
+  "version": "1.0.0",
+  "productName": "Music App",
+  "description": "music player desktop app with react",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "keywords": [
+    "electron",
+    "nodejs",
+    "react",
+    "music"
+  ],
+  "author": "lmssrinivas",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^1.4.15",
+    "electron-packager": "^8.5.1"
+  },
+  "devDependencies": {}
+}
