@@ -7,6 +7,8 @@
   "author": "lmssrinvias",
   "license": "MIT",
   "dependencies": {
+    "classnames": "^2.2.5",
+    "font-awesome": "^4.7.0",
     "path": "^0.12.7",
     "react": "^15.4.2",
     "react-autocomplete": "^1.4.0",
