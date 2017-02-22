@@ -5,10 +5,13 @@ var DetailsComponent = React.createClass({
 
     render: function() {
         return (
-            <div />
+            <div className='details'>
+                <h3>{this.props.title}</h3>
+                    
+             </div>
         );
     }
 
 });
 
-module.exports = DetailsComponent;
+export default DetailsComponent;
