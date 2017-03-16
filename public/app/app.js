@@ -1,23 +1,32 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import { hashHistory,browserHistory, Router } from 'react-router';
 
-import SearchComponent from './components/search.component';
-import DetailsComponent from './components/details.component';
-import PlayerComponent from './components/player.component';
-
+import routes from './router';
 
 class App extends React.Component {
 
     render(){
         return (
-            <div>
-                <SearchComponent/>
-                <DetailsComponent title={'Track title'}/>
+            <MuiThemeProvider muiTheme={getMuiTheme()}>
+                <Router history={hashHistory} routes={routes} />
 
-                <PlayerComponent/>
-            </div>
+                {/*<SearchComponent/>*/}
+                {/*<DetailsComponent title={'Track title'}/>*/}
+
+                {/*<PlayerComponent/>*/}
+                {/*<LoginComponent/>*/}
+            </MuiThemeProvider>
+
         )
     }
 }
 
-ReactDom.render(<App/> , document.getElementById('app'))
+injectTapEventPlugin();
+
+
+ReactDom.render(<App/> , document.getElementById('app'));
+
