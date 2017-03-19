@@ -3,22 +3,29 @@ import ReactDom from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import { hashHistory,browserHistory, Router } from 'react-router';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import routes from './router';
+import SignUpContainer from './containers/signup.container';
+import LoginContainer from './containers/login.container';
+import Base from './components/base.component';
+
+import '../css/app.scss';
+
+
+import AppRoutes from './routes';
 
 class App extends React.Component {
 
     render(){
         return (
             <MuiThemeProvider muiTheme={getMuiTheme()}>
-                <Router history={hashHistory} routes={routes} />
-
-                {/*<SearchComponent/>*/}
-                {/*<DetailsComponent title={'Track title'}/>*/}
-
-                {/*<PlayerComponent/>*/}
-                {/*<LoginComponent/>*/}
+                <Router>
+                    <div>
+                        <Base/>
+                        <Route exact path='/signup' component={SignUpContainer}/>
+                        <Route exact path='/login' component={LoginContainer}/>
+                    </div>
+                </Router>
             </MuiThemeProvider>
 
         )

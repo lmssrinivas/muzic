@@ -2,15 +2,19 @@
  * Created by mlingolu on 3/15/17.
  */
 
+import React, {PropTypes} from "react";
+import {Link} from "react-router-dom";
+import FontIcon from 'material-ui/FontIcon';
+import {blue500} from 'material-ui/styles/colors'
 
-import React,{PropTypes} from "react";
-import {IndexLink , Link} from "react-router";
-
-const Base = ({children}) => (
+const Base = () => (
     <div>
         <div className="top-bar">
             <div className="top-bar-left">
-                <IndexLink to={'/'}>Muzic App</IndexLink>
+                <span>
+                     <i className="fa fa-home blue"></i>
+                 </span>
+                <Link to={'/'}>Muzic App</Link>
             </div>
 
             <div className="top-bar-right">
@@ -19,15 +23,13 @@ const Base = ({children}) => (
             </div>
         </div>
 
-        {children}
-
     </div>
 );
 
-
-Base.propTypes = {
-    children : PropTypes.object.isRequired
-};
+//
+// Base.propTypes = {
+//     children : PropTypes.object.isRequired
+// };
 
 
 export default Base;

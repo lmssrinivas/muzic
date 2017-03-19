@@ -4,26 +4,25 @@
 
 import React,{ PropTypes } from "react";
 import {Card, CardText} from "material-ui/Card";
-import {RaisedButton} from "material-ui/RaisedButton";
+import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
-import {Link} from "react-router";
+import {Link} from "react-router-dom";
 
 
-
-
-const LoginComponent = (onSubmit,onChange,user,errors) =>(
+const LoginComponent = ({onSubmit,onChange,user,errors}) =>(
 
     <Card className="container">
         <h2 className="card-heading">Log In</h2>
 
 
         <div className="field-line">
+
             <TextField
                 floatingLabelText="Email"
                 name="email"
+                value={user.email}
                 onChange={onChange}
                 errorText={errors.email}
-                value={user.email}
             />
         </div>
 

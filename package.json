@@ -16,8 +16,14 @@
   "author": "lmssrinivas",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
     "electron": "^1.4.15",
-    "nodemon": "^1.11.0"
+    "express": "^4.15.2",
+    "mongoose": "^4.9.0",
+    "nodemon": "^1.11.0",
+    "passport": "^0.3.2",
+    "scribe-js": "^2.0.4"
   },
   "devDependencies": {
     "electron-packager": "^8.5.2",

@@ -2,6 +2,7 @@ const path = require('path');
 var webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var autoprefixer = require('autoprefixer');
 var precss = require('precss');
@@ -48,12 +49,8 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test:/\.css$/,
-                loaders: ['css-loader','style-loader']
-            },
-            {
                 test:/\.scss$/,
-                loader:['style-loader', 'css-loader','postcss','sass-loader']
+                loader:ExtractTextPlugin.extract('css-loader!sass-loader')
             },
             {
                 test: /\.(woff|woff2)$/,
@@ -79,8 +76,13 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery"
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+
+        new ExtractTextPlugin({
+            filename: 'dist/css/main.css',
+            allChunks: true
+        })
     ],
     watch :true
 
-}
+};

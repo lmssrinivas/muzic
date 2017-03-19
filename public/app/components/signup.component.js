@@ -4,13 +4,13 @@
 
 
 import React, { PropTypes } from 'react';
-import {Card } from 'material-ui/Card';
-import {TextField} from 'material-ui/TextField';
-import {RaisedButton} from 'material-ui/RaisedButton'
-
+import {Card,CardText } from 'material-ui/Card';
+import RaisedButton from 'material-ui/RaisedButton';
+import {Link} from 'react-router-dom';
+import TextField from 'material-ui/TextField';
 
 const SingUpComponent = ({onSubmit,onChange,errors,user})=>(
-    <Card>
+    <Card className="container">
 
         <form action="/" onSubmit={onSubmit}>
             <h2 className="card-heading">Sign Up Form</h2>
@@ -52,7 +52,7 @@ const SingUpComponent = ({onSubmit,onChange,errors,user})=>(
 
 
             <div className="button-line">
-                <RaiseButton type="submit" label="Create "/>
+                <RaisedButton type="submit" label="Create "/>
             </div>
 
             <CardText><Link to={'/login'} > Log In ??</Link></CardText>

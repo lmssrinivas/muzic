@@ -1,9 +1,11 @@
-import React from "react";
-import SignUpComponent from "../components/signup.component";
+import React , {Component} from "react";
+import SingUpComponent from "../components/signup.component";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-class SignUpContainer extends React.createClass{
+class SignUpContainer extends React.Component{
 
     constructor(props){
+
         super(props);
 
         this.state = {
@@ -14,6 +16,7 @@ class SignUpContainer extends React.createClass{
                 password:''
             }
         };
+
 
 
         this.submitForm = this.submitForm.bind(this);
@@ -35,7 +38,7 @@ class SignUpContainer extends React.createClass{
 
     render(){
         return(
-            <SignUpComponent
+            <SingUpComponent
                 errors={this.state.errors}
                 onChange={this.changeUser}
                 onSubmit={this.submitForm}
