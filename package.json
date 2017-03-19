@@ -5,7 +5,8 @@
   "description": "music player desktop app with react",
   "main": "main.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "npm run test",
+    "start": "node index.js"
   },
   "keywords": [
     "electron",
