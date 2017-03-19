@@ -82,7 +82,5 @@ module.exports = {
             filename: 'dist/css/main.css',
             allChunks: true
         })
-    ],
-    watch :true
-
+    ]
 };
