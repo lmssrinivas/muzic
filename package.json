@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test",
-    "postinstall": "npm run vendorinstall && npm run build",
+    "postinstall": "npm run vendorinstall && npm run start",
     "vendorinstall":"cd public && npm install",
     "build":"cd public && webpack",
     "start": "node index.js"
