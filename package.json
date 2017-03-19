@@ -6,7 +6,7 @@
   "main": "main.js",
   "scripts": {
     "test": "npm run test",
-    "postinstall":"cd public && npm install && webpack",
+    "postinstall":"cd public && npm install && npm install -g webpack && webpack",
     "start": "node index.js"
   },
   "keywords": [
