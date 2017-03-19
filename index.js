@@ -23,7 +23,9 @@ app.use('/logs', scribeLog.webPanel());
 // Database- mongodb
 mongoose.connect(config.dbURL);
 
+var favicon = require('serve-favicon');
 
+app.use(favicon(__dirname + '/dist/images/favicon.ico'));
 
 // Client side code
 app.use(express.static(path.join(__dirname,'dist')));

@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test",
-    "postinstall":"cd public && npm install",
+    "postinstall": "cd public && npm install",
     "start": "node index.js"
   },
   "keywords": [
@@ -25,7 +25,8 @@
     "mongoose": "^4.9.0",
     "nodemon": "^1.11.0",
     "passport": "^0.3.2",
-    "scribe-js": "^2.0.4"
+    "scribe-js": "^2.0.4",
+    "serve-favicon": "^2.4.1"
   },
   "devDependencies": {
     "electron-packager": "^8.5.2",

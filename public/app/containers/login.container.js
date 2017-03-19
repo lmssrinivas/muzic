@@ -17,7 +17,6 @@ class LoginContainer extends React.Component{
         this.state ={
             errors:{},
             user:{
-                name:'',
                 password:'',
                 email:''
             }
@@ -26,7 +25,12 @@ class LoginContainer extends React.Component{
     }
 
     changeUser($event){
-        console.log($event);
+        let field = $event.target.name;
+        const user = this.state.user;
+        user[field] = $event.target.value;
+        this.setState({
+            user
+        })
     }
 
     submitForm($event){
