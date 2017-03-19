@@ -12,35 +12,37 @@ import {Link} from "react-router-dom";
 const LoginComponent = ({onSubmit,onChange,user,errors}) =>(
 
     <Card className="container">
-        <h2 className="card-heading">Log In</h2>
+        <form  onSubmit={onSubmit}>
+            <h2 className="card-heading">Log In</h2>
 
 
-        <div className="field-line">
+            <div className="field-line">
 
-            <TextField
-                floatingLabelText="Email"
-                name="email"
-                value={user.email}
-                onChange={onChange}
-                errorText={errors.email}
-            />
-        </div>
+                <TextField
+                    floatingLabelText="Email"
+                    name="email"
+                    value={user.email}
+                    onChange={onChange}
+                    errorText={errors.email}
+                />
+            </div>
 
-        <div className="field-line">
-            <TextField
-                floatingLabelText="Password"
-                name="password"
-                type="password"
-                value={user.password}
-                onChange={onChange}
-                errorText={errors.password}
-            />
-        </div>
+            <div className="field-line">
+                <TextField
+                    floatingLabelText="Password"
+                    name="password"
+                    type="password"
+                    value={user.password}
+                    onChange={onChange}
+                    errorText={errors.password}
+                />
+            </div>
 
 
-        <RaisedButton type="submit" label="Log in"></RaisedButton>
+            <RaisedButton type="submit" label="Log in"></RaisedButton>
 
-        <CardText> Don't have Account <Link to={'/signup'}> Create Account</Link> </CardText>
+            <CardText> Don't have Account <Link to={'/signup'}> Create Account</Link> </CardText>
+        </form>
 
     </Card>
 );
