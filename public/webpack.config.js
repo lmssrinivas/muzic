@@ -24,6 +24,7 @@ const CopyWebpackPluginConfig =new CopyWebpackPlugin([
 
 
 module.exports = {
+    devtool: 'source-map',
     entry:{
         vendor:'./app/vendor.js',
         app:'./app/app.js',
@@ -71,11 +72,20 @@ module.exports = {
             filename:'index.html',
             inject:'body'
         }),
+
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: true,
+            compress: {
+                warnings: false
+            }
+        }),
         CopyWebpackPluginConfig,
+
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery"
         }),
+
         new webpack.HotModuleReplacementPlugin(),
 
         new ExtractTextPlugin({

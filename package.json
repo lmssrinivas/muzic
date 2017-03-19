@@ -6,9 +6,10 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test",
-    "postinstall": "npm run vendorinstall && npm run start",
-    "vendorinstall":"cd public && npm install",
-    "build":"cd public && webpack",
+    "postinstall": "npm run removebuild && npm run vendorinstall && npm run start",
+    "removebuild": "rimraf dist",
+    "vendorinstall": "cd public && npm install",
+    "build": "cd public && webpack",
     "start": "node index.js"
   },
   "keywords": [
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "electron-packager": "^8.5.2",
-    "electron-rebuild": "^1.5.7"
+    "electron-rebuild": "^1.5.7",
+    "rimraf": "^2.6.1"
   }
 }
