@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test",
-    "postinstall": "cd public && npm install",
+    "postinstall": "npm run vendorinstall && npm run build",
+    "vendorinstall":"cd public && npm install",
+    "build":"cd public && webpack",
     "start": "node index.js"
   },
   "keywords": [
