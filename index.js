@@ -12,7 +12,7 @@ var path = require('path');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var scribeLog = require('scribe-js')();
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8000;
 var app = express();
 
 
