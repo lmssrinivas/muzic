@@ -7,7 +7,9 @@ var express = require('express');
 var router = new express.Router();
 var authCtrl = require('./authCtrl');
 
-module.exports = function (router) {
 
-    router.get('/login',authCtrl.login);
-};
+router.post('/login',authCtrl.login);
+
+router.post('/signup',authCtrl.signup);
+
+module.exports = router;

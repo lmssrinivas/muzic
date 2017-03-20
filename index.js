@@ -38,12 +38,14 @@ app.engine('html',ejs.renderFile);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}));
 
+
 app.listen(port,function (req,res) {
     console.log('Server is running on port : '+ port);
 });
 
+
 let authRoutes = require('./server/auth/route');
-app.use('/auth',authRoutes)
+app.use('/auth',authRoutes);
 
 app.use('/',function(req,res,next){
     res.render('index.html');

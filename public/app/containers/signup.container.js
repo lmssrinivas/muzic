@@ -25,14 +25,21 @@ class SignUpContainer extends React.Component{
     }
 
 
-    changeUser(event){
-        console.log(event);
-        console.log(this.state);
+    changeUser($event){
+
     }
 
 
-    submitForm(event){
-        console.log(event);
+    submitForm($event){
+
+        $event.preventDefault();
+
+        let data={};
+        data.name = encodeURIComponent(this.state.user.name);
+        data.email = encodeURIComponent(this.state.user.email);
+        data.password = encodeURIComponent(this.state.user.password);
+        let f= encodeURIComponent(this.state.user);
+
     }
 
 

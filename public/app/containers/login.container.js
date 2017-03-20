@@ -36,7 +36,38 @@ class LoginContainer extends React.Component{
     }
 
     submitForm($event){
-        console.log($event);
+        $event.preventDefault();
+
+        let data={};
+        data.email = encodeURIComponent(this.state.user.email);
+        data.password = encodeURIComponent(this.state.user.password);
+
+        let ff= encodeURIComponent(this.state.user);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('post','/auth/login');
+        xhr.setRequestHeader('Content-Type','application/json');
+        xhr.responseType = 'json';
+
+        xhr.addEventListener('load', () => {
+            if(xhr.status == 200){
+
+                this.setState({
+                    errors : {}
+                });
+
+                alert('Successfully loged in');
+            }else{
+                let errors = xhr.response.errors ? xhr.response.errors : {};
+                errors.message =xhr.response.message;
+
+                this.setState({
+                    errors
+                })
+            }
+        });
+
+        xhr.send(this.state.user);
     }
 
     render(){

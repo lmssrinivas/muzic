@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import SignUpContainer from './containers/signup.container';
 import LoginContainer from './containers/login.container';
 import Base from './components/base.component';
+import HomeComponent from './components/home.component';
 
 import '../css/app.scss';
 
@@ -22,6 +23,7 @@ class App extends React.Component {
                 <Router>
                     <div>
                         <Base/>
+                        <Route exact path='/' component={HomeComponent}/>
                         <Route exact path='/signup' component={SignUpContainer}/>
                         <Route exact path='/login' component={LoginContainer}/>
                     </div>
