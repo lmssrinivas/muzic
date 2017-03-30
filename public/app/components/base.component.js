@@ -16,6 +16,7 @@ const Base = () => (
                  </span>
                 <Link to={'/'}>24</Link>
                 <Link to={'/music'}>Music</Link>
+                <Link to={'/users'}>Users</Link>
             </div>
 
             <div className="top-bar-right">

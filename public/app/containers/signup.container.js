@@ -40,6 +40,10 @@ class SignUpContainer extends React.Component{
         this.setState({user});
     }
 
+    closeSnackBar(){
+        // this.setState({open:false});
+    }
+
     changeUser($event){
         const user = this.state.user;
         let field = $event.target.name;
@@ -90,7 +94,7 @@ class SignUpContainer extends React.Component{
                     open={this.state.snackbar.open}
                     message={this.state.snackbar.message}
                     autoHideDuration={3000}
-                    onRequestClose={this.handleRequestClose}
+                    onRequestClose={this.closeSnackBar}
                 />
 
                 <SingUpComponent

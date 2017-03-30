@@ -6,7 +6,6 @@
   "main": "main.js",
   "scripts": {
     "test": "npm run test",
-    "postinstall": "npm run removebuild && npm run vendorinstall",
     "removebuild": "rimraf dist",
     "vendorinstall": "cd public && npm install",
     "build": "npm run removebuild && cd public && webpack",
@@ -32,7 +31,8 @@
     "passport": "^0.3.2",
     "passport-jwt": "^2.2.1",
     "scribe-js": "^2.0.4",
-    "serve-favicon": "^2.4.1"
+    "serve-favicon": "^2.4.1",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "electron-packager": "^8.5.2",

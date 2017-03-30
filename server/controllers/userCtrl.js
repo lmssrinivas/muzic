@@ -1,6 +1,7 @@
 
 
 var User = require('../models/user');
+var _ = require('underscore');
 
 
 module.exports.getUsers = function (req,res,next) {
@@ -9,7 +10,16 @@ module.exports.getUsers = function (req,res,next) {
         if(err){
 
         }else{
-            res.json(data);
+            let users =[];
+            data.map(user=>{
+                users.push(_.pick(user, '_id','name', 'email'))
+            })
+
+            res.json({
+                success : true,
+                data : users,
+                message : "Successfully fetched all Users"
+            });
         }
     })
 };
