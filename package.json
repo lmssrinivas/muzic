@@ -6,6 +6,7 @@
   "main": "main.js",
   "scripts": {
     "test": "npm run test",
+    "postinstall": "npm run removebuild && npm run vendorinstall",
     "removebuild": "rimraf dist",
     "vendorinstall": "cd public && npm install",
     "build": "npm run removebuild && cd public && webpack",
