@@ -2,7 +2,7 @@
   "name": "react-music",
   "version": "1.0.0",
   "description": "music app with react and electron",
-  "main": "main.js",
+  "main": "index.js",
   "repository": {},
   "scripts": {
     "postinstall": "node_modules/.bin/webpack"

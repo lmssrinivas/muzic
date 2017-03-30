@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "productName": "Music App",
   "description": "music player desktop app with react",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "test": "npm run test",
     "postinstall": "npm run removebuild && npm run vendorinstall",
