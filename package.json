@@ -8,8 +8,7 @@
     "test": "npm run test",
     "postinstall": "npm run removebuild && npm run vendorinstall",
     "removebuild": "rimraf dist",
-    "vendorinstall": "cd public && npm install",
-    "build": "cd public && webpack",
+    "vendorinstall": "cd public && npm install && webpack",
     "start": "node index.js"
   },
   "keywords": [
