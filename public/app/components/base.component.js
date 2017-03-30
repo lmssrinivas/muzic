@@ -14,7 +14,8 @@ const Base = () => (
                 <span>
                      <i className="fa fa-home blue"></i>
                  </span>
-                <Link to={'/'}>Muzic App</Link>
+                <Link to={'/'}>24</Link>
+                <Link to={'/music'}>Music</Link>
             </div>
 
             <div className="top-bar-right">

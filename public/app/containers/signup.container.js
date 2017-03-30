@@ -1,5 +1,7 @@
 import React , {Component} from "react";
 import SingUpComponent from "../components/signup.component";
+import Snackbar from 'material-ui/Snackbar'
+import axios from 'axios';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 class SignUpContainer extends React.Component{
@@ -9,6 +11,10 @@ class SignUpContainer extends React.Component{
         super(props);
 
         this.state = {
+            snackbar:{
+                open:false,
+                message:''
+            },
             errors : {},
             user:{
                 name:'',
@@ -24,8 +30,24 @@ class SignUpContainer extends React.Component{
 
     }
 
+    clearForm(){
+
+        let user = {
+            name:'',
+            email:'',
+            password:''
+        };
+        this.setState({user});
+    }
 
     changeUser($event){
+        const user = this.state.user;
+        let field = $event.target.name;
+        user[field] = $event.target.value;
+
+        this.setState({
+            user
+        })
 
     }
 
@@ -34,23 +56,51 @@ class SignUpContainer extends React.Component{
 
         $event.preventDefault();
 
-        let data={};
-        data.name = encodeURIComponent(this.state.user.name);
-        data.email = encodeURIComponent(this.state.user.email);
-        data.password = encodeURIComponent(this.state.user.password);
-        let f= encodeURIComponent(this.state.user);
+        axios.post('/api/users/signup',this.state.user).then(response=>{
+
+            let snackbar ={};
+            snackbar.open = true;
+            snackbar.message = response.data.message;
+
+            this.setState({snackbar});
+            if(response.data.data && response.data.success){
+
+                this.clearForm();
+
+            }else if(response.data.error && !response.data.success){
+
+            }
+
+        })
 
     }
 
 
     render(){
+        let style={
+            top: 0,
+            height: 50,
+            backgroundColor: '#e86750'
+        }
+
         return(
-            <SingUpComponent
-                errors={this.state.errors}
-                onChange={this.changeUser}
-                onSubmit={this.submitForm}
-                user={this.state.user}
-            />
+            <div>
+                <Snackbar
+                    style={style}
+                    open={this.state.snackbar.open}
+                    message={this.state.snackbar.message}
+                    autoHideDuration={3000}
+                    onRequestClose={this.handleRequestClose}
+                />
+
+                <SingUpComponent
+                    errors={this.state.errors}
+                    onChange={this.changeUser}
+                    onSubmit={this.submitForm}
+                    user={this.state.user}
+                />
+            </div>
+
         )
     }
 

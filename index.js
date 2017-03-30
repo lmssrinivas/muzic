@@ -21,7 +21,8 @@ app.use(scribeLog.express.logger());
 app.use('/logs', scribeLog.webPanel());
 
 // Database- mongodb
-// mongoose.connect(config.dbURL);
+mongoose.connect(config.mlabDB);
+app.set('secretKey',config.secret); //Set secret key
 
 var favicon = require('serve-favicon');
 
@@ -36,7 +37,7 @@ app.engine('html',ejs.renderFile);
 
 // Parsing request
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended : true}));
+app.use(bodyParser.urlencoded({extended : false}));
 
 
 app.listen(port,function (req,res) {
@@ -44,10 +45,10 @@ app.listen(port,function (req,res) {
 });
 
 
-let authRoutes = require('./server/auth/route');
-app.use('/auth',authRoutes);
+let routes = require('./server/routes/routes');
+app.use('/',routes);
 
 app.use('/',function(req,res,next){
     res.render('index.html');
     next();
-})
+});

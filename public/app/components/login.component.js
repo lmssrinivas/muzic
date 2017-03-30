@@ -24,6 +24,7 @@ const LoginComponent = ({onSubmit,onChange,user,errors}) =>(
                     value={user.email}
                     onChange={onChange}
                     errorText={errors.email}
+                    autoComplete="off"
                 />
             </div>
 
@@ -35,6 +36,7 @@ const LoginComponent = ({onSubmit,onChange,user,errors}) =>(
                     value={user.password}
                     onChange={onChange}
                     errorText={errors.password}
+                    autoComplete="off"
                 />
             </div>
 

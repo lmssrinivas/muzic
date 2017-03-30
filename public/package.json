@@ -4,18 +4,18 @@
   "description": "music app with react and electron",
   "main": "main.js",
   "repository": {},
-  "scripts":{
-    "postinstall":"node_modules/.bin/webpack"
+  "scripts": {
+    "postinstall": "node_modules/.bin/webpack"
   },
   "author": "lmssrinvias",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.15.3",
     "bootstrap": "^3.3.7",
     "classnames": "^2.2.5",
     "font-awesome": "^4.7.0",
     "jquery": "^3.1.1",
     "material-ui": "^0.17.1",
-    "node-sass": "^4.5.0",
     "path": "^0.12.7",
     "react": "^15.4.2",
     "react-autocomplete": "^1.4.0",
@@ -41,6 +41,7 @@
     "postcss": "^5.2.16",
     "precss": "^1.4.0",
     "sass-loader": "^6.0.3",
+    "node-sass": "3.7.0",
     "style-loader": "^0.14.1",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.2"

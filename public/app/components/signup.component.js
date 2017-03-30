@@ -24,6 +24,7 @@ const SingUpComponent = ({onSubmit,onChange,errors,user})=>(
                     onChange={onChange}
                     errorText={errors.name}
                     value={user.name}
+                    autoComplete="off"
                 />
             </div>
 
@@ -35,6 +36,7 @@ const SingUpComponent = ({onSubmit,onChange,errors,user})=>(
                     value={user.email}
                     onChange={onChange}
                     errorText={errors.email}
+                    autoComplete="off"
                 />
             </div>
 
@@ -46,6 +48,7 @@ const SingUpComponent = ({onSubmit,onChange,errors,user})=>(
                     onChange={onChange}
                     errorText={errors.password}
                     value={user.password}
+                    autoComplete="off"
                 />
 
             </div>

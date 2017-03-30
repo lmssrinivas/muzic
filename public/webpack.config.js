@@ -51,7 +51,7 @@ module.exports = {
             },
             {
                 test:/\.scss$/,
-                loader:ExtractTextPlugin.extract('css-loader!sass-loader')
+                loader:ExtractTextPlugin.extract('css-loader?sourceMap!sass-loader?sourceMap')
             },
             {
                 test: /\.(woff|woff2)$/,
@@ -72,7 +72,10 @@ module.exports = {
             filename:'index.html',
             inject:'body'
         }),
-
+        new ExtractTextPlugin({
+            filename: 'dist/css/main.css',
+            allChunks: true
+        }),
         // new webpack.optimize.UglifyJsPlugin({
         //     minimize: true,
         //     compress: {
@@ -86,11 +89,6 @@ module.exports = {
             jQuery: "jquery"
         }),
 
-        new webpack.HotModuleReplacementPlugin(),
-
-        new ExtractTextPlugin({
-            filename: 'dist/css/main.css',
-            allChunks: true
-        })
+        new webpack.HotModuleReplacementPlugin()
     ]
 };

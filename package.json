@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "productName": "Music App",
   "description": "music player desktop app with react",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "npm run test",
     "postinstall": "npm run removebuild && npm run vendorinstall",
     "removebuild": "rimraf dist",
     "vendorinstall": "cd public && npm install",
-    "build": "cd public && webpack",
+    "build": "npm run removebuild && cd public && webpack",
     "start": "node index.js"
   },
   "keywords": [

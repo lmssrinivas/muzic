@@ -5,8 +5,11 @@
 
 var express = require('express');
 var router = new express.Router();
-var authCtrl = require('./authCtrl');
+var authCtrl = require('../controllers/authCtrl');
+var userCtrl = require('../controllers/userCtrl');
 
+
+router.get('/',userCtrl.getUsers);
 
 router.post('/login',authCtrl.login);
 

@@ -1,0 +1,23 @@
+
+.top-bar {
+  padding: 10px 15px;
+  margin-bottom: 50px;
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  &-left{
+    float: left;
+    font-size: 1.5em;
+  }
+  &-right {
+    float: right;
+  }
+
+  a, .nav a {
+    margin: 0 8px;
+  }
+}
