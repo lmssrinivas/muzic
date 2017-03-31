@@ -4,7 +4,7 @@
   "description": "music app with react and electron",
   "repository": {},
   "scripts": {
-    "postinstall": "node_modules/.bin/webpack"
+    "postdinstall": "node_modules/.bin/webpack"
   },
   "author": "lmssrinvias",
   "license": "MIT",

@@ -76,12 +76,12 @@ module.exports = {
             filename: 'dist/css/main.css',
             allChunks: true
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            minimize: true,
-            compress: {
-                warnings: false
-            }
-        }),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     minimize: true,
+        //     compress: {
+        //         warnings: false
+        //     }
+        // }),
         CopyWebpackPluginConfig,
 
         new webpack.ProvidePlugin({
