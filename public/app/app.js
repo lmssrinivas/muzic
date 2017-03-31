@@ -10,6 +10,7 @@ import SignUpContainer from './containers/signup.container';
 import LoginContainer from './containers/login.container';
 import MusicContainer from './containers/muzic.container';
 import UsersContainer from './containers/users.container';
+import ProfileContainer from './containers/profile.container';
 
 import Base from './components/base.component';
 import HomeComponent from './components/home.component';
@@ -23,13 +24,14 @@ class App extends React.Component {
 
     render(){
         return (
-            <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+            <MuiThemeProvider muiTheme={getMuiTheme()}>
                 <Router>
                     <div>
                         <Base/>
                         <Route exact path='/' component={HomeComponent}/>
                         <Route exact path='/music' component={MusicContainer}/>
                         <Route exact path='/users' component={UsersContainer}/>
+                        <Route exact path='/users/:id' component={ProfileContainer}/>
                         <Route exact path='/signup' component={SignUpContainer}/>
                         <Route exact path='/login' component={LoginContainer}/>
                     </div>

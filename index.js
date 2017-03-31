@@ -28,8 +28,9 @@ var favicon = require('serve-favicon');
 
 app.use(favicon(__dirname + '/dist/images/favicon.ico'));
 
-// Client side code
-app.use(express.static(path.join(__dirname,'dist')));
+
+
+//app.use(express.static('dist'));
 
 app.set('views',path.join(__dirname,'dist'));
 app.set('views engine','html');
@@ -39,6 +40,8 @@ app.engine('html',ejs.renderFile);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : false}));
 
+// Client side code
+app.use(express.static(path.join(__dirname,'dist')));
 
 app.listen(port,function (req,res) {
     console.log('Server is running on port : '+ port);
@@ -48,7 +51,7 @@ app.listen(port,function (req,res) {
 let routes = require('./server/routes/routes');
 app.use('/',routes);
 
-app.use('/',function(req,res,next){
+app.use('/*',function(req,res,next){
     res.render('index.html');
     next();
 });

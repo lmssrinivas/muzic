@@ -4,7 +4,8 @@
 
 
 import React from 'react';
-import {Card,CardTitle} from 'material-ui/Card'
+import {Card,CardTitle,CardText} from 'material-ui/Card'
+import {Link} from 'react-router-dom';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 import axios from 'axios';
 
@@ -48,14 +49,17 @@ class UsersContainer extends React.Component{
                     <TableBody>
                         {this.state.users.map((user,index)=>{
                             return (
+
                                 <TableRow key={index}>
                                     <TableRowColumn>{index}</TableRowColumn>
                                     <TableRowColumn>{user.name}</TableRowColumn>
                                     <TableRowColumn>{user.email}</TableRowColumn>
+                                    <TableRowColumn>
+                                        <CardText><Link  to={`/users/${user._id}`} >View</Link></CardText>
+                                    </TableRowColumn>
                                 </TableRow>
                             )
                         })}
-
 
                     </TableBody>
                 </Table>

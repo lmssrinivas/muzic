@@ -68,8 +68,8 @@ class SignUpContainer extends React.Component{
 
             this.setState({snackbar});
             if(response.data.data && response.data.success){
-
                 this.clearForm();
+                this.props.history.push(`/users/${response.data.data._id}`)
 
             }else if(response.data.error && !response.data.success){
 

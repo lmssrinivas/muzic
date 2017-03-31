@@ -1,0 +1,67 @@
+/**
+ * Created by mlingolu on 3/30/17.
+ */
+
+import React from 'react';
+import {List, ListItem} from 'material-ui/List';
+import ContentInbox from 'material-ui/svg-icons/content/inbox';
+import ActionGrade from 'material-ui/svg-icons/action/grade';
+import ContentSend from 'material-ui/svg-icons/content/send';
+import ContentDrafts from 'material-ui/svg-icons/content/drafts';
+import Divider from 'material-ui/Divider';
+import ActionInfo from 'material-ui/svg-icons/action/info';
+
+import SignUpContainer from './signup.container';
+import LoginContainer from './login.container';
+import MusicContainer from './muzic.container';
+
+
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+
+class ProfileContainer extends React.Component{
+
+    constructor(){
+
+        super()
+
+        this.state = {
+            profile :{
+
+            }
+        }
+    }
+
+
+    render(){
+
+        return (
+            <div>
+
+                <List>
+                    <ListItem primaryText="Inbox" leftIcon={<ContentInbox />} />
+                    <ListItem primaryText="Starred" leftIcon={<ActionGrade />} />
+                    <ListItem primaryText="Sent mail" leftIcon={<ContentSend />} />
+                    <ListItem primaryText="Drafts" leftIcon={<ContentDrafts />} />
+                    <ListItem primaryText="Inbox" leftIcon={<ContentInbox />} />
+                </List>
+                <Divider />
+                <List>
+                    <ListItem primaryText="All mail" rightIcon={<ActionInfo />} />
+                    <ListItem primaryText="Trash" rightIcon={<ActionInfo />} />
+                    <ListItem primaryText="Spam" rightIcon={<ActionInfo />} />
+                    <ListItem primaryText="Follow up" rightIcon={<ActionInfo />} />
+                </List>
+
+                <Router>
+                    <div>
+                        <Route exact path='/music' component={MusicContainer}/>
+                    </div>
+                </Router>
+            </div>
+        )
+    }
+
+}
+
+
+export default ProfileContainer;
