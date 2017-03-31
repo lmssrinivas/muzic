@@ -2,10 +2,9 @@
   "name": "react-music",
   "version": "1.0.0",
   "description": "music app with react and electron",
-  "main": "index.js",
   "repository": {},
   "scripts": {
-    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress",
+    "heroku-postbuild": "node_modules/.bin/webpack -p --config ./webpack.config.js --progress",
 
     "disableinstall": "node_modules/.bin/webpack"
   },
