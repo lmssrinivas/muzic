@@ -4,9 +4,7 @@
   "description": "music app with react and electron",
   "repository": {},
   "scripts": {
-    "heroku-postbuild": "node_modules/.bin/webpack -p --config ./webpack.config.js --progress",
-
-    "disableinstall": "node_modules/.bin/webpack"
+    "postinstall": "node_modules/.bin/webpack"
   },
   "author": "lmssrinvias",
   "license": "MIT",

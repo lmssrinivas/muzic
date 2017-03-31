@@ -9,7 +9,8 @@
     "postinstall": "npm run removebuild && npm run vendorinstall",
     "removebuild": "rimraf dist",
     "vendorinstall": "cd public && npm install",
-    "start": "node index.js"
+    "start": "node index.js",
+    "heroku-postbuild": "cd public && node_modules/.bin/webpack -p --config ./webpack.config.js --progress"
   },
   "keywords": [
     "electron",
