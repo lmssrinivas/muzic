@@ -6,11 +6,11 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test",
-    "postinstall": "npm run removebuild && npm run vendorinstall",
+    "postinstall": "npm run removebuild && npm run vendorinstall && npm run build",
     "removebuild": "rimraf dist",
     "vendorinstall": "cd public && npm install",
-    "start": "node index.js",
-    "heroku-postbuild": "cd public && node_modules/.bin/webpack -p --config ./webpack.config.js --progress"
+    "build":"cd public && npm run build",
+    "start": "node index.js"
   },
   "keywords": [
     "electron",
