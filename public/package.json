@@ -5,7 +5,9 @@
   "main": "index.js",
   "repository": {},
   "scripts": {
-    "postinstall": "node_modules/.bin/webpack"
+    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress",
+
+    "disableinstall": "node_modules/.bin/webpack"
   },
   "author": "lmssrinvias",
   "license": "MIT",
